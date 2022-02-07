@@ -21,7 +21,7 @@ time = []
 fig = plt.figure()
 axs = []
 for i in range(2):
-    axs.append(fig.add_subplot(2,2,i+1))
+    axs.append(fig.add_subplot(1,2,i+1))
 
 def handle_data():
     global U,Z,X,F,f,P,Q,R,H,h,Xs,time
@@ -59,12 +59,13 @@ def animate(i):
     ax = axs[0]
     ax.plot(time, td.record["z_gps"], label="GPS")
     ax.plot(time, Xsarr[:,0,0], label="Kalman")
+    ax.plot(time, td.record["z"], label="True")
     ax.legend()
     ax.set_title("z")
 
     ax = axs[1]
-    ax.plot(time, td.record["vz_baro"], label="Baro")
     ax.plot(time[1:], (Xsarr[1:,0,0] - Xsarr[:-1,0,0])/td.dt, label="Kalman")
+    ax.plot(time, td.record["vz_baro"], label="Baro")
     ax.legend()
     ax.set_title("vz")
 
