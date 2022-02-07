@@ -24,7 +24,7 @@ def model(td,dt):
         [dt*0.5]
     ])**2
     R = np.array([
-        [5]
+        [td.std_dev_gps]
     ])**2
 
     def get_U_Z(td):

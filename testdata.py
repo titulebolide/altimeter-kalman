@@ -19,7 +19,7 @@ class TestData:
         self.p_capt_std_dev = 3
         self.vz_baro = 0
         self.z_gps = self.z
-        self.std_dev_gps = 5
+        self.std_dev_gps = 10
         self.record = {}
 
     def walls(self,t):

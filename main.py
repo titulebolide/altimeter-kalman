@@ -71,7 +71,7 @@ def animate(i):
 
 
 if __name__ == "__main__":
-    for _ in range(1000):
+    for _ in range(5000):
         handle_data()
     animate(0)
     plt.show()
